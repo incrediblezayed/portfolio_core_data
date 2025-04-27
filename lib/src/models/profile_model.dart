@@ -8,13 +8,13 @@ class ProfileData extends Model {
   final String tagline;
   final String resumeUrl;
   final String email;
-  final String imageUrl;
+  final String image;
   final Map<String, String> socialLinks;
 
   ProfileData({
     required this.name,
     required this.title,
-    required this.imageUrl,
+    required this.image,
     required this.tagline,
     required this.resumeUrl,
     required this.email,
@@ -29,7 +29,7 @@ class ProfileData extends Model {
       tagline: json['tagline'] ?? 'Your Tagline',
       resumeUrl: json['resumeUrl'] ?? '',
       email: json['email'] ?? '',
-      imageUrl: json['imageUrl'] ?? '',
+      image: json['image'] ?? '',
       socialLinks: Map<String, String>.from(json['socialLinks'] ?? {}),
     );
   }
@@ -47,7 +47,7 @@ class ProfileData extends Model {
       'tagline': tagline,
       'resumeUrl': resumeUrl,
       'email': email,
-      'imageUrl': imageUrl,
+      'image': image,
       'socialLinks': socialLinks
     };
   }
