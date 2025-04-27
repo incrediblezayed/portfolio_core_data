@@ -94,12 +94,10 @@ class ExperienceModel extends Model {
           ? []
           : List<TechStackModel>.from(
               (map['techStacks'] as List)
-                      .map<TechStackModel>(
-                        (c) =>
-                            TechStackModel.fromMap(c as Map<String, dynamic>),
-                      )
-                      .toList() ??
-                  [],
+                  .map<TechStackModel>(
+                    (c) => TechStackModel.fromMap(c as Map<String, dynamic>),
+                  )
+                  .toList(),
             ),
       isActive: map['isActive'] as bool? ?? true,
     );
